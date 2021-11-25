@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN mkdir /app
 
-CP ./target/data-0.0.1-SNAPSHOT.jar /app/data-0.0.1-SNAPSHOT.jar
+COPY ./target/data-0.0.1-SNAPSHOT.jar /app/data-0.0.1-SNAPSHOT.jar
 
 WORKDIR /app
 
