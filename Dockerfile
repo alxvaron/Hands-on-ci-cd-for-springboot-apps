@@ -1,7 +1,5 @@
-FROM ubuntu:latest
-RUN apt-get update && \
-   apt-get -y install default-jdk
-
-RUN mkdir /app
-COPY ./target/data-0.0.1-SNAPSHOT.jar /app/data-0.0.1-SNAPSHOT.jar
-WORKDIR /app
+FROM adoptopenjdk/openjdk11:jdk-11.0.2.9-slim
+ENV PORT 8080
+COPY target/*.jar /opt/app.jar
+WORKDIR /opt
+ENTRYPOINT exec java $JAVA_OPTS -jar app.jar
