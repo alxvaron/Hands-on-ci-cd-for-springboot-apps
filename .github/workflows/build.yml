@@ -131,7 +131,7 @@ jobs:
           environment_name: Springbootdeployenv-env
           version_label: ${{github.SHA}}
           region: us-east-2
-          deployment_package: ${{ secrets.DOCKER_HUB_USERNAME }}/springboot:latest
+          deployment_package: data-0.0.1-SNAPSHOT.jar
           
       - name: Check Out Repo 
         uses: actions/checkout@v2
