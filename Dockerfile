@@ -1,8 +1,7 @@
-FROM openjdk:8-jre-alpine
-WORKDIR /springboot
+FROM debian
 
-ENV PORT 8080
-CMD ["dir"]
-COPY ./target/*.jar /opt/app.jar
-WORKDIR /opt
-ENTRYPOINT exec java $JAVA_OPTS -jar app.jar
+RUN apt-get update
+RUN apt-get –y install openjdk-8-jdk
+
+COPY . /app
+CMD ["java", "-jar", "/app/target/app.jar"]
