@@ -1,4 +1,5 @@
 name: Quality sonar test
+
 on:
   #Manually trigger workflow runs
   workflow_dispatch:
